@@ -48,6 +48,26 @@ def teste_dividir_negativo():
 
         # 3 Valida
         assert resultado_obtido == resultado_esperado
+# lista para uso como massa de teste
+lista_de_valores = [
+    (8,7,15),
+    (12,13,25),
+    (5,9,14),
+    (8,6,14),
+    (9,6,15)
+]
+@pytest.mar
+def teste_somar_leitura_de_lista():
+            # 1 Configura
+            num_a = 13
+            num_b = 12
+            resultado_esperado = 25
+
+            # 2 Executa
+            resultado_obtido = somar(num_a, num_b)
+
+            # 3 Valida
+            assert resultado_esperado == resultado_obtido
 
     # TDD = Test Driven Development
 
