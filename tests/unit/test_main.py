@@ -2,7 +2,7 @@ import csv
 
 import pytest
 
-from main import somar, dividir
+from main import somar, dividir, subtrair
 
 
 def ler_csv(arquivo_csv):
@@ -31,6 +31,36 @@ def teste_somar():
 
     # 3 Valida
     assert resultado_esperado == resultado_obtido
+
+def teste_subtrair():
+    # 1- Prepara / Configura
+    #1.1 - Dados de Entrada /Valores do Teste
+
+    num_a = 15
+    num_b = 10
+
+    # 1.2 Resultados Esperados
+    resultado_esperado = 5
+
+    # 2 - Executa
+    resultado_obtido = subtrair(num_a , num_b)
+
+    # 3 - Valida / Checa
+
+    assert resultado_obtido == resultado_esperado
+
+@pytest.mark.parametrize('num_a,num_b,resultado_esperado',ler_csv('C:\\Users\\Acer\\PycharmProjects\\134inicial_n\\vendors\\csv\\massa_teste_subtrair_positivo.csv'))
+def teste_subtrair_leitura_csv(num_a,num_b,resultado_esperado):
+    # 1 - Prepara / Configura
+
+
+    # 2 - Executa
+    resultado_obtido = subtrair(int(num_a) , int(num_b))
+
+    # 3 - Valida / Checa
+
+    assert resultado_obtido == int(resultado_esperado)
+
 
 
 def teste_dividir_positivo():
