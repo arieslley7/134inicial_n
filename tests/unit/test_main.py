@@ -9,7 +9,7 @@ def ler_csv(arquivo_csv):
     dados_csv = []
     try:
         with open(arquivo_csv, newline='') as massa:
-            campos = csv.reader(, delimiter=',')
+            campos = csv.reader(massa, delimiter=',')
             next(campos)
             for linha in campos:
                 dados_csv.append(linha)
